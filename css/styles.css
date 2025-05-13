@@ -1,4 +1,4 @@
-body, header, nav, main, footer, h1, ul{
+body, header, nav, main, footer, h1, h2, h3, ul{
     margin: 0;
     padding: 0;
     border: 0;
@@ -22,7 +22,7 @@ img{
 body{
     overflow: auto;
     background: radial-gradient(circle,rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 100%);
-    font-family: "Roboto", sans-serif;;
+    font-family: "Roboto", sans-serif;
 }
 
 body p{
@@ -40,12 +40,11 @@ body p{
 
 .mobile-nav{
     overflow: hidden;
-    background-color: #777777;
     position: relative;
 }
 
 .mobile-nav a{
-    color: black;
+    color: #ddd;
     text-align: center;
     font-size: 2em;
     text-decoration: none;
@@ -72,18 +71,24 @@ body p{
     color: black;
 }
 
+.mobile-nav .logo{
+    color: #00D4FF;
+}
+
 .logo{
     font-family: "Salsa", cursive;
     font-weight: 400;
     font-size: 1.5em;
-    color: black;
+    color: #00D4FF;
     text-decoration: none;
 }
 
 nav{
     position: sticky;
     top: 0;
-    background-color: #383B39;
+    background-color: rgba(30, 30, 30, 0.8); /* dark translucent */
+    backdrop-filter: blur(8px); /* adds a frosted glass look */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3)
 }
 
 h1{
@@ -92,7 +97,29 @@ h1{
 }
 
 h2{
+    margin: 10px 0;
     color: white;
+    text-align: center;
+}
+
+.typewriter {
+    text-align: center;
+    color: #00D4FF;
+    font-size: 1rem;
+    margin: 0 auto;
+
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.5px solid #00D4FF;
+    width: 0;
+    animation:
+      typing 3s steps(28, end) forwards,
+      blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to   { width: 28ch }
 }
 
 li{
@@ -115,6 +142,8 @@ li a{
 
 .icons{
     display: flex;
+    justify-content: center;
+    margin: 10px 0;
 }
 
 .icons a i{
@@ -127,17 +156,22 @@ li a{
     transition: all 0.3s ease;
 }
 
+.column a{
+    text-decoration: none;
+}
+
 .column button{
     background-color: #00D4FF;
     border: none;
-    border-radius: 60px;
+    border-radius: 10px;
     color: black;
     padding: 20px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block;
+    align-items: center;
     font-size: 16px;
-    margin: 10px 2px;
+    margin: 10px auto;
     cursor: pointer;
     transition-duration: 0.4s;
 }
@@ -166,6 +200,7 @@ footer{
     font-size: 0.65em;
     clear: left;
     background-color: white;
+    margin-top: auto;
 }
 
 footer li{
@@ -240,27 +275,65 @@ input[type="submit"].btn{
 }
 
 .about{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
+
+.about .main{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .main-text h1{
     font-size: 32px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    color: #00D4FF;
 }
 
 .main-text h5{
     font-size: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.main p{
+    text-align: center;
+}
+
+span{
+    color: #00D4FF;
 }
 
 .main img{
     display: block;
-    width: 49.99999%;
-    height: 50%;
-    margin: auto;
-    padding-top: 15px;
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #c7c7c7;
+    border: 10px solid #777777;
+    border-radius: 50%;
+    box-shadow: 
+        0 0 10px #00f6ff,
+        0 0 20px #00f6ff,
+        0 0 40px #00f6ff,
+        0 0 80px #00f6ff;
 }
 
 button{
-    background-color: #c5CDC7;
+    display: block;
+    margin: 0 auto;
+    background-color: #00D4FF;
     color: black;
     border: 2px solid transparent;
     border-radius: 30px;
@@ -342,7 +415,6 @@ button{
     }
 
     nav{
-        background-color: #c7c7c7;
         border-bottom: 1px solid black;
         align-items: center;
     }
@@ -359,13 +431,40 @@ button{
     }
 
     h2{
+        display: block;
+        text-align: start;
         font-size: 2em;
         padding-bottom: 10px;
     }
 
     h3{
+        display: inline-block;
+        text-align: start;
+    }
+
+    .icons{
+        display: flex;
+        justify-content: left;
+    }
+
+    h3{
         font-size: 1.5em;
         color: #c7c7c7;
+    }
+
+    .column button{
+        background-color: #00D4FF;
+        border: none;
+        border-radius: 12px;
+        color: black;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 10px 2px;
+        cursor: pointer;
+        transition-duration: 0.4s;
     }
 
     #work{
@@ -468,21 +567,6 @@ button{
         justify-content: space-around;
     }
 
-    .main-text h1{
-        font-size: 3em;
-        text-transform: uppercase;
-        text-align: start;
-        margin-bottom: 20px;
-        color: #00D4FF;
-    }
-
-    .main-text h5{
-        font-size: 24px;
-        text-transform: uppercase;
-        margin-bottom: 20px;
-        color: white;
-    }
-
     .main-text p{
         font-size: 18px;
         margin-bottom: 20px;
@@ -503,11 +587,15 @@ button{
         padding: 10px;
         text-align: center;
         text-decoration: none;
-        display: inline-block;
+        display: block;
         font-size: 16px;
-        margin: 10px 2px;
+        margin: 0 auto;
         cursor: pointer;
         transition-duration: 0.4s;
+    }
+
+    footer{
+        margin-top: auto;
     }
 }
 
@@ -522,7 +610,6 @@ button{
     }
 
     nav{
-        background-color: #777777;
         border-bottom: 1px solid black;
         display: flex;
         align-items: center;
@@ -534,7 +621,7 @@ button{
         font-family: "Salsa", cursive;
         font-weight: 400;
         font-size: 24px;
-        color: black;
+        color: #00D4FF;
         text-decoration: none;
     }
     
@@ -544,7 +631,7 @@ button{
     
     li a{
         font-family: "Roboto", sans-serif;
-        color: black;
+        color: #ddd;
         font-size: 18px;
         margin-right: 20px;
         text-transform: uppercase;
@@ -553,7 +640,7 @@ button{
 
     li a:hover,
     li a.active{
-        color: #ddd;
+        color: #00D4FF;
         text-decoration: underline;
     }
 
@@ -620,21 +707,6 @@ button{
         padding-bottom: 10px;
     }
 
-    .column button{
-        background-color: #00D4FF;
-        border: none;
-        border-radius: 12px;
-        color: black;
-        padding: 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 10px 2px;
-        cursor: pointer;
-        transition-duration: 0.4s;
-    }
-
     .column button:hover{
         background-color: #00D4FF;
         box-shadow: 
@@ -648,14 +720,14 @@ button{
     .typewriter {
         font-size: 1.2rem;
         font-family: 'Roboto', sans-serif;
-        color: white;
+        color: #00D4FF;
       
         display: inline-block;
         overflow: hidden;
         white-space: nowrap;
       
         width: 0;
-        animation: typing 3s steps(278, end) forwards;
+        animation: typing 3s steps(28, end) forwards;
         position: relative;
       }
       
@@ -708,6 +780,7 @@ button{
     footer{
         text-align: center;
         font-size: 0.65em;
+        margin-top: auto;
     }
 
     li i{
@@ -727,12 +800,41 @@ button{
         clear: both;
       }
 
-    #about img{
+      .about {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 20px;
+      }
+      
+      .about .main {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        gap: 40px;
+      }
+      
+      .about .main-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+      }
+
+    .about img{
         display: block;
         margin: 0 auto;
         border-radius:50%;
-        width: 10%;
-        border: 1px solid black;
+        width: 30%;
+        border: 10px solid black;
+    }
+
+    .about .main-text h1,
+    .about .main-text h5,
+    .about .main-text p {
+        margin-bottom: 20px;
     }
 
     .work-column img:hover{
